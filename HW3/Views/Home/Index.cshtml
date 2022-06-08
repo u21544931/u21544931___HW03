@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @ViewBag.Message
+</div>
+
+<div class="row jumbotron">
+    
+    <div class="col-md-8">
+        <h2>SHYYY'STY MEDIA</h2>
+        <p>Shyyy'sty Media, is a Media Uploading Platform that was established on the 19th of January 2022. It is a fairly new platform that is posed to make the process of uploading, downloading and/or deleting files more efficient.</p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Option Selection</h2>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+    <form>
+        <!--creating the document radio button-->
+        <div class="form-group">
+            @Html.RadioButton("FileType", "Document")<span>Documents</span><br>
+        </div>
+
+        <!--creating the image radio button-->
+        <div class="form-group">
+            @Html.RadioButton("FileType", "Image")<span>Images</span><br>
+        </div>
+
+        <!--creating the 'video radio button-->
+        <div class="form-group form-check">
+            @Html.RadioButton("FileType", "Video")<span>Video</span><br>
+        </div>
+        <div class="form-group form-check">
+            <input type="file" name="file" id="file">
+        </div>
+
+
+        <!--creating a button called 'submit-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+        }
+        </div>
+
+</div>
